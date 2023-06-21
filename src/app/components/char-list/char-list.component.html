@@ -1,0 +1,19 @@
+<div *ngFor="let char of characters?.results" class="card" (click)="viewDetail(char.id)">
+    <img [src]="char.image" [alt]="char.name+'-image'">
+    <div class="details">
+        <h2>{{char.name}}</h2>
+        <p class="status-wrap">
+            <span [class]="'status-color '+ 'status-color-'+char.status.toLowerCase()"></span>
+            <span class="status"> {{char.status}} </span> -
+            <span class="species"> {{char.species}} </span>
+        </p>
+        <div class="more-info">
+            <p class="grey-text">Last known location:</p>
+            <p class="location"> {{char.location.name}} </p>
+        </div>
+        <div class="more-info">
+            <p class="grey-text">First seen in:</p>
+            <p class="origin"> {{char.origin.name}} </p>
+        </div>
+    </div>
+</div>
